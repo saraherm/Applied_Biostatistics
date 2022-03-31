@@ -1,0 +1,85 @@
+site,migstat,urb.cat,n.obs
+01.Gill,mig,anthro,25
+01.Gill,resi,anthro,17
+02.Colrain,mig,natural,31
+02.Colrain,resi,natural,17
+03.Green GTD,mig,natural,34
+03.Green GTD,resi,natural,15
+04.Green Leyden,mig,anthro,28
+04.Green Leyden,resi,anthro,29
+05.Green,mig,anthro,17
+05.Green,resi,anthro,12
+06.Green Rocky Mtn,mig,anthro,23
+06.Green Rocky Mtn,resi,anthro,20
+08.Montague,mig,natural,33
+08.Montague,resi,natural,21
+09.Montague WMA,mig,natural,31
+09.Montague WMA,resi,natural,24
+10.Sunderland Toby,mig,natural,36
+10.Sunderland Toby,resi,natural,10
+11.Whately,mig,natural,30
+11.Whately,resi,natural,22
+12.Amherst Flat Hills,mig,natural,28
+12.Amherst Flat Hills,resi,natural,13
+14.Hadley Warner,mig,anthro,19
+14.Hadley Warner,resi,anthro,35
+15.Noho Smith,mig,natural,23
+15.Noho Smith,resi,natural,12
+16.Noho Fitz Lake,mig,anthro,47
+16.Noho Fitz Lake,resi,anthro,23
+17.Amherst Brick,mig,anthro,25
+17.Amherst Brick,resi,anthro,45
+18.Noho Pines Edge,mig,natural,26
+18.Noho Pines Edge,resi,natural,10
+19.Noho Grow,mig,anthro,26
+19.Noho Grow,resi,anthro,29
+20.Amherst Law Swamp,mig,anthro,35
+20.Amherst Law Swamp,resi,anthro,30
+21.Hadley Skinner-A,mig,natural,16
+21.Hadley Skinner-A,resi,natural,9
+22.Noho Arcadia-A,mig,anthro,29
+22.Noho Arcadia-A,resi,anthro,39
+23.Hadley Skinner-B,mig,natural,37
+23.Hadley Skinner-B,resi,natural,16
+24.Noho Arcadia-B,mig,anthro,38
+24.Noho Arcadia-B,resi,anthro,34
+25.Granby Batch,mig,natural,29
+25.Granby Batch,resi,natural,52
+26.Easthampton Dwyer,mig,anthro,16
+26.Easthampton Dwyer,resi,anthro,32
+28.Holyoke Mtom,mig,natural,20
+28.Holyoke Mtom,resi,natural,30
+29.Granby Sands,mig,natural,30
+29.Granby Sands,resi,natural,33
+30.Holyoke Mtom-B,mig,natural,26
+30.Holyoke Mtom-B,resi,natural,19
+31.Easthampton Buch,mig,natural,13
+31.Easthampton Buch,resi,natural,21
+33.SHadley Bynan,mig,anthro,26
+33.SHadley Bynan,resi,anthro,34
+34.Ludlow Westover,mig,natural,37
+34.Ludlow Westover,resi,natural,24
+36.Chicopee State Pk,mig,natural,4
+36.Chicopee State Pk,resi,natural,32
+37.Wilberham,mig,anthro,9
+37.Wilberham,resi,anthro,31
+38.Chicopee Atwater,mig,anthro,25
+38.Chicopee Atwater,resi,anthro,19
+39.Springfield Branch,mig,anthro,9
+39.Springfield Branch,resi,anthro,33
+41.Westfield Robinson,mig,natural,12
+41.Westfield Robinson,resi,natural,15
+42.WSpring Mitten-A,mig,anthro,27
+42.WSpring Mitten-A,resi,anthro,39
+43.WSpring Mitten-B,mig,natural,20
+43.WSpring Mitten-B,resi,natural,26
+44.Agawam Robinson,mig,natural,22
+44.Agawam Robinson,resi,natural,24
+45.Spring For Park-A,mig,anthro,7
+45.Spring For Park-A,resi,anthro,39
+46.Spring For Park-B,mig,anthro,10
+46.Spring For Park-B,resi,anthro,26
+48.Spring For Park-C,mig,anthro,15
+48.Spring For Park-C,resi,anthro,32
+49.Longmeadow Laurel,mig,anthro,13
+49.Longmeadow Laurel,resi,anthro,39
