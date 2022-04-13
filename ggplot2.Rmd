@@ -1,0 +1,402 @@
+---
+title: "An Introduction to ggplot2"
+output: learnr::tutorial
+
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+require(learnr)
+require(reshape2)
+require(patchwork)
+require(ggplot2)
+require(knitr)
+
+time_series <- read.csv("data/time_series.csv")
+age_data <- read.csv("data/age.csv")
+conditions <- read.csv("data/conditions.csv")
+TIME_SERIES_FV <- time_series[,c(1,2)]
+Melt_Time_Series <- melt(time_series, id.vars= c("Week"))
+Melt_Cond_Series <- melt(conditions, id.vars= c("Conditions"))
+
+options(width = 10)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Preamble (Skip if needed)
+
+In the interest of time and simplicity, I have already installed the necessary packages and the data-sets that you will need to use this workbook. But if you would like to know how I did this, then read the section.
+
+Remember, you only need to download and install the package once. Then when you start a new project, you just need to add library() at the top of the your script and it should work.
+
+```{r echo=TRUE}
+#These are commented so they won't run, but you can see the two functions necessary for running packages.
+
+#install.packages('ggplot2')
+#install.packages('reshape2')
+#install.packages('patchwork')
+
+#library(reshape2)
+#library(ggplot2)
+#library(patchwork)
+
+```
+
+```{r include=FALSE}
+
+### aha you sneak, you're reading the source code
+require(reshape2)
+require(patchwork)
+require(ggplot2)
+require(packrat)
+require(knitr)
+```
+
+Now, this is how you load in data. This again has already been done for you, but you can see three .csv files and I use the read.csv() here.
+
+```{r echo=TRUE}
+
+time_series <- read.csv("data/time_series.csv")
+age_data <- read.csv("data/age.csv")
+conditions <- read.csv("data/conditions.csv")
+
+
+```
+
+## A. A single line plot {data-progressive="TRUE"}
+
+The first step is to look a our data! Here, we have the number of new cases across different counties across time (weeks). We have 4 counties!
+
+```{r echo=FALSE, results='asis'}
+kable(head(time_series),caption='The case numbers of TBA')
+```
+
+I want to start out very simple, however, and plot cases for a single county. Specifically, I am interested in the time series of the county FV. From the main data-frame (labeled: **time_series**), I want to extract the week column and the Cases_FV column. This corresponds to the first and second column.
+
+```{r echo=TRUE}
+#Here, I am extracting the first and second column of the data.frame and assigning it to a new variable which I call TIME_SERIES_FV
+TIME_SERIES_FV <- time_series[,c(1,2)]
+```
+
+```{r include=FALSE}
+
+TIME_SERIES_FV <- time_series[,c(1,2)]
+
+```
+### Exercise A.1: The Data Layer {data-progressive="TRUE"}
+
+*Fill in the blank: the data, the variables within the data that will correspond to the x-axis and the y-axis.*
+
+```{r beginning, exercise=TRUE}
+#The data.frame is called TIME_SERIES_FV and the column names are Week and Cases_FV
+
+ggplot(___, aes(x=___ ,y =___ ))
+```
+
+### Exercise A.2: The Geom Layer {data-progressive="TRUE"}
+
+*Fill in the blank: Add in the geometric layer, specifically the line-layer (**geom_line**). Finally, add in the point layer (**geom_point**).*
+
+```{r geom_layer, exercise=TRUE}
+ggplot(TIME_SERIES_FV, aes(x=Week ,y =Cases_FV ))+
+  ____
+```
+
+### Exercise A.3: Changing color and size
+
+*Fill in the blank: Change the color of the line to blue and change the size of the point to 2.*
+
+```{r geom_layer_color, exercise=TRUE}
+ggplot(TIME_SERIES_FV, aes(x=Week ,y =Cases_FV ))+
+  geom_line(_____)+geom_point(______)
+```
+
+### Exercise A.4: Changing the appearance with theme
+
+*Fill in the blank: Add the theme layer specifically **theme_bw()***
+
+```{r geom_layer_theme, exercise=TRUE}
+ggplot(TIME_SERIES_FV, aes(x=Week ,y =Cases_FV ))+
+  geom_line(color='blue')+geom_point(size =3)+
+  ______
+```
+
+## B. Multiple lines in a plot {data-progressive="TRUE"}
+
+Now let's tackle something a bit harder, let's think about showing all counties in a single line plot.
+
+### Exercise B.1: Melt the data! {data-progressive="TRUE"}
+
+*Fill in the blank: Melt the data.frame from wide to long.*
+
+```{r melt, exercise=TRUE}
+#The data.frame is time_series and the variable names are Week, Cases_FV, Cases_I, Cases_CM, Cases_HB
+
+Melt_Time_Series <- melt(_______, id.vars=c("______"))
+
+
+print(head(Melt_Time_Series))
+```
+
+```{r include=FALSE}
+Melt_Time_Series <- melt(time_series, id.vars= c("Week"))
+```
+
+### Exercise B.2: Plotting the melted data.frame
+
+*Fill in the blank: the data, the variables within the data that will correspond to the x-axis and the y-axis. Add the geom_line*
+
+```{r melt_first_layer, exercise=TRUE}
+
+#Remember the dataframe name is: Melt_Time_Series and the column names are: Week, variable, value
+
+ggplot(_______, aes(x=_____ ,y =_____ ))+________
+```
+
+### Exercise B.3: Plotting the melted data.frame again
+
+*Fill in the blank: Fix the graph!*
+
+```{r melt_first_layer_fix, exercise=TRUE}
+ggplot(Melt_Time_Series , aes(x=Week ,y =value, _______)+geom_line()
+```
+
+### Exercise B.4: Changing the colors manually
+
+*Fill in the blank: Change the scales so that*
+
+1.  *The name of the legend will be Counties*
+
+2.  *The new labels are: FV, I, CM, HB*
+
+3.  *The corresponding new colors are: purple, green, navy, and gold*
+
+```{r melt_first_layer_color, exercise=TRUE}
+ggplot(Melt_Time_Series , aes(x=Week ,y =value, color =variable ))+geom_line()+scale_color_manual(name='______',
+                      labels = c(__________),
+                      values = c(___________))
+```
+
+### Exercise B.5: Adding the labels
+
+*Fill in the blank: Change so that the x-axis title is "Week", the y-axis title is "Cases", and the main title is "Time Series of TBA"*
+
+```{r melt_first_layerfinal, exercise=TRUE}
+ggplot(Melt_Time_Series , aes(x=Week ,y =value, color =variable ))+geom_line()+scale_color_manual(name="Counties",
+                     labels=c("FV","I","CM",'HB'),
+                     values=c("purple","green","navy",'gold'))+_____+_____+______
+```
+
+### Exercise B.6: Adding the theme
+
+*Fill in the blank: add theme_bw()*
+
+```{r melt_first_layer_theme, exercise=TRUE}
+ggplot(Melt_Time_Series , aes(x=Week ,y =value, color =variable ))+geom_line()+scale_color_manual(name="Counties",
+                     labels=c("FV","I","CM",'HB'),
+                     values=c("purple","green","navy",'gold'))+xlab("week")+ylab("Cases")+
+  ggtitle(("Time Series of TBA"))+____________
+```
+
+### Exercise B.7: Facet
+
+*Fill in the blank: add the facet layer and facet by variable (counties)*
+
+```{r melt_first_layer_theme_facet, exercise=TRUE}
+ggplot(subset(Melt_Time_Series,Melt_Time_Series$variable != 'Cases_FV'),
+              aes(x=Week ,y =value, color =variable ))+geom_line()+ facet_wrap(________)+ 
+  scale_color_manual(name="Counties",
+                     labels=c("FV","I","CM",'HB'),
+                     values=c("purple","green","navy",'gold'))+xlab("week")+ylab("Cases")+ggtitle(("Time Series of TBA"))+theme_bw()
+```
+
+### Exercise B.8: Multiplot
+
+*Fill in the blank: add the facet layer and facet by counties*
+
+```{r patched, exercise=TRUE}
+
+plot1<-ggplot(Melt_Time_Series , aes(x=Week ,y =value, color =variable ))+geom_line()+ facet_wrap(~variable)+ 
+  
+  scale_color_manual(name="Counties",
+                     labels=c("FV","I","CM",'HB'),
+                     values=c("purple","green","navy",'gold'))+xlab("week")+ylab("Cases")+ggtitle(("Time Series of TBA"))+theme_bw()
+
+plot2<-ggplot(Melt_Time_Series , aes(x=Week ,y =value, color =variable ))+geom_line()+
+  scale_color_manual(name="Counties",
+                     labels=c("FV","I","CM",'HB'),
+                     values=c("purple","green","navy",'gold'))+xlab("week")+ylab("Cases")+ggtitle(("Time Series of TBA"))+theme_bw()
+
+
+______+_______
+_____/______
+```
+
+## C. Bargraphs {data-progressive="TRUE"}
+
+```{r echo=FALSE, results='asis'}
+kable(head(age_data),caption='The cases by age')
+```
+
+### Exercise C.1: Melt Bargraph
+
+*Fill in the blank: Melt the data.frame from wide to long*
+
+```{r bargraph_melt, exercise=TRUE}
+#the data is age_data and the columns are Age, FV_Cases, I_Cases,CM_Case, HB_Cases
+
+age_2 <- melt(______, id.vars = c("____"))
+
+View(age_2)
+```
+
+```{r include=FALSE}
+age_2 <- melt(age_data, id.vars = c('Age'))
+```
+
+### Exercise C.2: Data Layer
+
+*Fill in the blank: the data, the variables within the data that will correspond to the x-axis and the y-axis.*
+
+```{r bargraph_data, exercise=TRUE}
+
+###The data.frame we want to use is age_2 and the column names are: Age, variable, and value
+
+
+ggplot(______, aes(x = ______ , y= _______))
+
+```
+
+### Exercise C.3: Geom Layer
+
+*Fill in the blank: the geographic representation in this case, a barplot (**geom_bar**). (hint do not worry if it does no work the first time)*
+
+```{r bargraph_data_geom, exercise=TRUE}
+ggplot(age_2, aes(x = Age , y= value)) + ________
+```
+
+### Exercise C.4: Fill Layer
+
+*Fill in the blank: the fill*
+
+```{r bargraph_data_fill, exercise=TRUE}
+
+ggplot(age_2, aes(x = Age , y= value, fill=_______)) + geom_bar(stat=_______)
+```
+
+### Exercise C.5: Position
+
+*Fill in the blank: the position*
+
+```{r bargraph_data_position, exercise=TRUE}
+
+ggplot(age_2, aes(x = Age , y= value, fill = variable))+ geom_bar(stat='identity',position=___)
+```
+
+### Exercise C.6: Scale Fill
+
+*Fill in the blank: Change the scales so that*
+
+1.  *The name of the legend will be Counties*
+
+2.  *The new labels are: FV, I, CM, HB*
+
+3.  *The corresponding new colors are: purple, green, navy, and gold*
+
+```{r bargraph_data_fill_scale, exercise=TRUE}
+
+ggplot(age_2, aes(x = Age , y= value, fill = variable)) + geom_bar(stat='identity',position='dodge')
+  scale_butt_manual(name="",
+                     labels=c(),
+                     values=c())
+```
+
+### Exercise C.7: Labels and theme
+
+*Fill in the blank: Change the x-xis label to "Age", the y-axis label to "Cases" and the main title to "Cases by Age". Finally add in theme_bw()*
+
+```{r bargraph_data_lab, exercise=TRUE}
+
+ggplot(age_2, aes(x = Age , y= value, fill = variable)) + geom_bar(stat='identity',position='dodge')+
+    scale_fill_manual(name="Counties",
+                     labels=c("FV","I","CM",'HB'),
+                     values=c("purple","green","navy",'gold'))+______+______+___________+______
+```
+
+## D. Geom Tile {data-progressive="TRUE"}
+
+```{r echo=FALSE, results='asis'}
+kable(head(conditions),caption='Conditions')
+```
+
+### Exercise D.1: Melt! {data-progressive="TRUE"}
+
+*Fill in the blank: Melt the data.frame from wide to long*
+
+```{r melt_c, exercise=TRUE}
+#the data is conditions and the columns are Conditions,FV,	I,	VM,	HB
+
+Melt_Cond_Series <- melt(_______, id.vars=c("_______"))
+print(head(Melt_Cond_Series))
+```
+
+```{r include=FALSE}
+Melt_Cond_Series <- melt(conditions, id.vars= c("Conditions"))
+```
+
+### Exercise D.2: Plotting the melted data.frame
+
+*Fill in the blank: the data, the variables within the data that will correspond to the x-axis and the y-axis.*
+
+```{r melt_plo_c, exercise=TRUE}
+
+###The data.frame we want to use is  Melt_Cond_Series  and the column names are: Conditions, variable, value
+
+ggplot(Melt_Cond_Series, aes(x = ______ , y= ______))
+```
+
+### Exercise D.3: Geom layer
+
+*Fill in the blank: the geographic representation in this case, a tiled plot (**geom_tile**) and make sure the fill-color is based on the yes or no.*
+
+```{r melt_plot_c_geom, exercise=TRUE}
+
+ggplot(Melt_Cond_Series, aes(x = variable, y= Conditions, fill= ____))+_____
+```
+
+### Exercise D.4: Geom layer-color
+
+*Fill in the blank: make the outlines of the tile white*
+
+```{r melt_plot_c_geom_2, exercise=TRUE}
+
+ggplot(Melt_Cond_Series, aes(x = variable, y= Conditions, fill=variable))+geom_tile(color=___)
+```
+
+### Exercise D.5: Change the scale-layer
+
+*Fill in the blank: Change the scales so that*
+
+1.  *The name of the legend will be empty ''*
+
+2.  *The new labels are: 'Absent','Present*
+
+3.  *The corresponding new colors are: 'black' and 'green'*
+
+```{r melt_plot_c_geom_3, exercise=TRUE}
+
+ggplot(Melt_Cond_Series, aes(x = variable, y= Conditions, fill=value))+geom_tile(color="white")+
+   scale_fill_manual(name = '______',labels = c(_______), values = c(_______))+theme_bw()
+```
+
+### Exercise D.6: Change the labels and the theme
+
+*Fill in the blank: Change the x-xis label to "Counties", the y-axis label to "Conditions and the main title to "Are these things present?". Finally add in theme_bw()*
+
+```{r melt_plot_c_geom_4, exercise=TRUE}
+
+ggplot(conditions_2, aes(x = variable, y = Conditions , fill = value))+
+  geom_tile(color='white')+
+  scale_fill_manual(name = '',labels = c('Absent', "Present"), values = c("black",'green'))+
+ xlab(___)+ylab(___)+ggtitle(___)
+```
