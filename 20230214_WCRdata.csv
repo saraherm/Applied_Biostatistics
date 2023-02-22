@@ -1,0 +1,81 @@
+Sample,SoilType,Variety,DateGerm,WCR,DateWCR,#WCRAdded,RootMass(g),ShootMass(g),#WCRRecovered,WCRWeightAvg(mg)
+A01,Fallow,Master's Choice,6/7/2021,yes,7/14/2021,19,NA,0.876g,0,NA
+A02,Fallow,Master's Choice,6/7/2021,no,7/14/2021,0,2.3968g,1.2108g,NA,NA
+A03,Fallow,Master's Choice,6/7/2021,no,7/14/2021,0,0.86g,1.4335g,NA,NA
+A04,Fallow,Master's Choice,6/7/2021,no,7/14/2021,0,1.2151g,1.0482g,NA,NA
+A05,Fallow,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,1.2342g,2,4.9085
+A06,Fallow,Master's Choice,6/7/2021,no,7/14/2021,0,NA,NA,NA,NA
+A07,Fallow,Master's Choice,6/7/2021,no,7/14/2021,0,3.414g,1.9611g,NA,NA
+A08,Fallow,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,0.985g,0,NA
+B01,Pea,Master's Choice,6/7/2021,no,7/14/2021,0,5.328g,0.9941g,NA,NA
+B02,Pea,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,1.8193g,2,1.1875
+B03,Pea,Master's Choice,6/7/2021,no,7/14/2021,0,3.19g,1.2485g,NA,NA
+B04,Pea,Master's Choice,6/7/2021,no,7/14/2021,0,3.2538g,1.4763g,NA,NA
+B05,Pea,Master's Choice,6/7/2021,no,7/14/2021,0,2.6374g,2.308g,NA,NA
+B06,Pea,Master's Choice,6/7/2021,no,7/14/2021,0,NA,NA,NA,NA
+B07,Pea,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,1.0071g,2,1.925
+B08,Pea,Master's Choice,6/7/2021,yes,7/14/2021,19,NA,1.2394g,3,1.754
+C01,Radish,Master's Choice,6/7/2021,no,7/14/2021,0,2.6257g,0.8298g,NA,NA
+C02,Radish,Master's Choice,6/7/2021,no,7/14/2021,0,1.2915g,0.7157g,NA,NA
+C03,Radish,Master's Choice,6/7/2021,no,7/14/2021,0,1.4311g,0.7913g,NA,NA
+C04,Radish,Master's Choice,6/7/2021,yes,7/14/2021,15,NA,1.3589g,2,2.4115
+C05,Radish,Master's Choice,6/7/2021,no,7/14/2021,0,NA,NA,NA,NA
+C06,Radish,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,0.897g,2,1.622
+C07,Radish,Master's Choice,6/7/2021,no,7/14/2021,0,2.8733g,1.077g,NA,NA
+C08,Radish,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,0.8996g,1,0.883
+D01,Triticale,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,1.3162g,2,0.4915
+D02,Triticale,Master's Choice,6/7/2021,no,7/14/2021,0,2.6276g,1.4898g,NA,NA
+D03,Triticale,Master's Choice,6/7/2021,no,7/14/2021,0,2.572g,1.0897g,NA,NA
+D04,Triticale,Master's Choice,6/7/2021,no,7/14/2021,0,2.4306g,1.1353g,NA,NA
+D05,Triticale,Master's Choice,6/7/2021,no,7/14/2021,0,2.7386g,0.8054g,NA,NA
+D06,Triticale,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,0.8595g,5,0.288
+D07,Triticale,Master's Choice,6/7/2021,no,7/14/2021,0,1.5567g,1.0281g,NA,NA
+D08,Triticale,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,1.2594g,3,0.636
+E01,Mix,Master's Choice,6/7/2021,no,7/14/2021,0,0.8837g,0.6356g,NA,NA
+E02,Mix,Master's Choice,6/7/2021,no,7/14/2021,0,4.5173g,1.3623g,NA,NA
+E03,Mix,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,0.9196g,2,0.187
+E04,Mix,Master's Choice,6/7/2021,yes,7/14/2021,17,NA,0.8705g,2,0.8015
+E05,Mix,Master's Choice,6/7/2021,yes,7/14/2021,20,NA,1.2207g,0,NA
+E06,Mix,Master's Choice,6/7/2021,no,7/14/2021,0,3.695g,0.8144g,NA,NA
+E07,Mix,Master's Choice,6/7/2021,no,7/14/2021,0,1.7231g,0.8142g,NA,NA
+E08,Mix,Master's Choice,6/7/2021,no,7/14/2021,0,1.031g,1.2272g,NA,NA
+G01,Fallow,Blue River Organic,6/7/2021,no,7/14/2021,0,0.6842g,1.0549g,NA,NA
+G02,Fallow,Blue River Organic,6/7/2021,yes,7/14/2021,16,NA,0.8781g,1,1.61
+G03,Fallow,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,0.9132g,1,2.024
+G04,Fallow,Blue River Organic,6/7/2021,no,7/14/2021,0,2.1037g,1.2454g,NA,NA
+G05,Fallow,Blue River Organic,6/7/2021,no,7/14/2021,0,2.5585g,1.333g,NA,NA
+G06,Fallow,Blue River Organic,6/7/2021,no,7/14/2021,0,2.1889g,0.8834g,NA,NA
+G07,Fallow,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,1.0197g,4,0.9875
+G08,Fallow,Blue River Organic,6/7/2021,no,7/14/2021,0,1.4625g,0.999g,NA,NA
+H01,Pea,Blue River Organic,6/7/2021,no,7/14/2021,0,5.5573g,1.9889g,NA,NA
+H02,Pea,Blue River Organic,6/7/2021,yes,7/14/2021,17,NA,0.9193g,1,3.32
+H03,Pea,Blue River Organic,6/7/2021,no,7/14/2021,0,4.5295g,1.5814g,NA,NA
+H04,Pea,Blue River Organic,6/7/2021,no,7/14/2021,0,2.4502g,0.8852g,NA,NA
+H05,Pea,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,1.19g,0,NA
+H06,Pea,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,1.7594g,4,1.34
+H07,Pea,Blue River Organic,6/7/2021,no,7/14/2021,0,3.8318g,1.3459g,NA,NA
+H08,Pea,Blue River Organic,6/7/2021,no,7/14/2021,0,1.9089g,1.0757g,NA,NA
+I01,Radish,Blue River Organic,6/7/2021,no,7/14/2021,0,1.6842g,0.4926g,NA,NA
+I02,Radish,Blue River Organic,6/7/2021,yes,7/14/2021,18,NA,0.6629g,2,0.9805
+I03,Radish,Blue River Organic,6/7/2021,no,7/14/2021,0,4.6707g,1.2001g,NA,NA
+I04,Radish,Blue River Organic,6/7/2021,no,7/14/2021,0,2.5919g,1.0894g,NA,NA
+I05,Radish,Blue River Organic,6/7/2021,no,7/14/2021,0,3.2625g,1.1804g,NA,NA
+I06,Radish,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,0.884g,0,NA
+I07,Radish,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,1.0544g,3,1.007333333
+I08,Radish,Blue River Organic,6/7/2021,no,7/14/2021,0,1.75g,1.0473g,NA,NA
+J01,Triticale,Blue River Organic,6/7/2021,no,7/14/2021,0,2.31g,1.339g,NA,NA
+J02,Triticale,Blue River Organic,6/7/2021,yes,7/14/2021,16,NA,0.8029g,0,NA
+J03,Triticale,Blue River Organic,6/7/2021,no,7/14/2021,0,4.2718g,1.0118g,NA,NA
+J04,Triticale,Blue River Organic,6/7/2021,no,7/14/2021,0,2.1066g,1.0074g,NA,NA
+J05,Triticale,Blue River Organic,6/7/2021,no,7/14/2021,0,1.8112g,0.6148g,NA,NA
+J06,Triticale,Blue River Organic,6/7/2021,yes,7/14/2021,19,NA,0.8632g,0,NA
+J07,Triticale,Blue River Organic,6/7/2021,no,7/14/2021,0,1.9543g,0.6681g,NA,NA
+J08,Triticale,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,1.0233g,1,0.452
+K01,Mix,Blue River Organic,6/7/2021,no,7/14/2021,0,1.9002g,1.0612g,NA,NA
+K02,Mix,Blue River Organic,6/7/2021,no,7/14/2021,0,4.0072g,1.4052g,NA,NA
+K03,Mix,Blue River Organic,6/7/2021,no,7/14/2021,0,4.1169g,1.0773g,NA,NA
+K04,Mix,Blue River Organic,6/7/2021,yes,7/14/2021,18,NA,1.321g,0,NA
+K05,Mix,Blue River Organic,6/7/2021,yes,7/14/2021,20,NA,1.0419g,7,1.2595
+K06,Mix,Blue River Organic,6/7/2021,yes,7/14/2021,18,NA,0.9809g,0,NA
+K07,Mix,Blue River Organic,6/7/2021,no,7/14/2021,0,0.1936g,0.0735g,NA,NA
+K08,Mix,Blue River Organic,6/7/2021,no,7/14/2021,0,2.1097g,NA,NA,NA
